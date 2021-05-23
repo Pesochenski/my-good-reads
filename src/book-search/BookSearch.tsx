@@ -24,7 +24,7 @@ export default function BookSearch(props: innerProps): JSX.Element {
   }, [bookTypeToSearch]);
 
   function liveRequestBooks(): void {
-    if (bookTypeToSearch !== bookType) {
+    if (bookTypeToSearch !== bookType && bookType.trim()) {
       setTimeout(() => setBookTypeToSearch(bookType), 500);
     }
   }

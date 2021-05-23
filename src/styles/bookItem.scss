@@ -20,7 +20,7 @@
   }
 
   &__description {
-    width: 60rem;
+    max-width: 60rem;
     color: $gray60;
     margin-bottom: $spacing-xxs;
     font-weight: 100;
