@@ -1,7 +1,7 @@
 import React from 'react';
-import Wishlist from '../wishlist';
 import { render, unmountComponentAtNode } from 'react-dom';
 import { act } from 'react-dom/test-utils';
+import BookSearch from '../book-search/BookSearch';
 const defaultJSON = require('../../sampleJSONResponse.json');
 
 let container: DocumentFragment | HTMLDivElement | Element;
@@ -17,14 +17,14 @@ afterEach(() => {
   document.body.removeChild(container);
 });
 
-describe('Checking wishlist functional', () => {
+describe('Checking book search functional', () => {
   test('should correctly render', () => {
     const mockChange = jest.fn();
     act(() => {
-      render(<Wishlist wished={items} setWished={mockChange} />, container);
+      render(<BookSearch wished={items} setWished={mockChange} />, container);
     });
 
-    const title: HTMLElement | null = document.querySelector('h1');
-    expect(title?.innerHTML).toBe('Wishlist 10');
+    const input: HTMLElement | null = document.querySelector('input');
+    expect(input?.className).toBe('book-container__input');
   });
 });

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { getBooksByType } from "./book-search.service";
 import { bookInterface, responseInterface } from "../interfaces/resInterface";
 import { innerProps } from "../interfaces/propsInterfaces";
+import BookItem from "./book-search-item";
 
 export default function BookSearch(props: innerProps): JSX.Element {
   const [bookType, setBookType] = useState<string>("");
@@ -72,61 +73,13 @@ export default function BookSearch(props: innerProps): JSX.Element {
         <div className="book-container__content">
           {
           allAvailableBooks.items?.length ? (allAvailableBooks.items.map((item: bookInterface) => (
-            <div 
-            key={item.id} 
-            className="book-container__item"
-            >
-              <img 
-              className="book-container__thumbnail"
-              src={item.volumeInfo.imageLinks?.smallThumbnail} 
-              alt="book"
-              /> 
-              <div>
-                <h1 
-                className="book-container__item-title"
-                >
-                  {item.volumeInfo.title}
-                </h1>
-                <h2 
-                className="book-container__item-authors"
-                >
-                  {item.volumeInfo.authors?.join(', ')}
-                </h2>
-
-                <p 
-                className="book-container__item-description"
-                >
-                  {item.volumeInfo.description}
-                </p>
-
-                <div className="book-container__item-publish">
-                  {
-                    item.volumeInfo.publisher?.length ? 
-                      <p 
-                      className="book-container__item-publisher"
-                      >
-                        {item.volumeInfo.publisher}
-                      </p> :
-                    null
-                  }
-                  <p 
-                  className="book-container__item-pub-date"
-                  >
-                    {item.volumeInfo.publishedDate?.split('-').join('.')}
-                  </p>
-                </div>
-              </div>
-              <button 
-                className="book-container__item-btn"
-                onClick={() => {
-                !props.wished.includes(item) ? 
-                props.setWished(props.wished.concat([item])) : 
-                setErr('This book is already in your list')
-                }}
-              >
-                Add
-              </button>
-            </div>
+            <BookItem 
+            key={item.id}
+            item={item} 
+            setErr={setErr} 
+            wished={props.wished} 
+            setWished={props.setWished} 
+            />
           ))) : (
             <div className="book-container_empty">
               <p>Sorry, didn't found any books yet</p>

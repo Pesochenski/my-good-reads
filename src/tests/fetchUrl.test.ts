@@ -11,6 +11,7 @@ declare global {
     }
   }
 }
+
 describe('Testing FetchUrl - Wrapper over fetch', () => {
   const res = [{
     id: '1',

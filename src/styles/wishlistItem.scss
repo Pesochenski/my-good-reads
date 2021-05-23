@@ -1,0 +1,50 @@
+@import './variables';
+
+.wishlist {
+  &__item {
+    display: flex;
+    border-radius: 10px;
+    padding: $spacing-xxs;
+    width: 100%;
+    border: 1px solid $gray20;
+    transition: 0.3s;
+    margin-bottom: $spacing-xxs;
+    &:hover {
+      border: 1px solid $gray70;
+    }
+
+    &-thumbnail {
+      width: 50px;
+      height: 80px;
+      border-radius: 10px;
+      margin-right: $spacing-xs;
+    }
+    &-btn {
+      margin-left: auto;
+      border-radius: 10px;
+      height: 70px;
+      width: 70px;
+      outline: none;
+      border: none;
+      color: white;
+      font-size: 15px;
+      background-color: $blue-accent;
+      transition: 0.3s;
+      &:hover {
+        background-color: $blue-dark;
+      }
+    }
+    &-title {
+      font-size: 18px;
+      width: 12rem;
+    }
+    &-authors {
+      width: 12rem;
+      color: $gray80;
+      font: {
+        size: 14px;
+        weight: 200;
+      }
+    }
+  }
+}

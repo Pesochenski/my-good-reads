@@ -1,0 +1,59 @@
+@import './variables';
+
+.book-item {
+  width: 100%;
+  display: flex;
+  padding: $spacing-xs;
+  border-radius: 12px;
+  border: 1px solid $gray20;
+  margin-bottom: $spacing-xs;
+  transition: 0.3s;
+  &:hover {
+    border: 1px solid $gray70;
+  }
+
+  &__thumbnail {
+    height: 100px;
+    width: 60px;
+    border-radius: 8px;
+    margin-right: $spacing-xs;
+  }
+
+  &__description {
+    width: 60rem;
+    color: $gray60;
+    margin-bottom: $spacing-xxs;
+    font-weight: 100;
+    letter-spacing: 0.02em;
+  }
+  &__publish {
+    display: flex;
+    font-weight: 200;
+    color: $gray80;
+  }
+  &__publisher {
+    margin-right: $spacing-xxs;
+  }
+  &__title {
+    font-size: 22px;
+  }
+  &__authors {
+    font-size: 18px;
+    color: $gray80;
+  }
+  &__btn {
+    margin-left: auto;
+    border-radius: 10px;
+    height: 80px;
+    width: 80px;
+    outline: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    background-color: $blue-accent;
+    transition: 0.3s;
+    &:hover {
+      background-color: $blue-dark;
+    }
+  }
+}

@@ -26,10 +26,6 @@
   }
 }
 
-.book {
-  border: 1px solid silver;
-  margin-top: 0.5rem;
-}
 .book-container {
   display: flex;
   flex-flow: row nowrap;
@@ -81,56 +77,5 @@
     width: 60px;
     border-radius: 8px;
     margin-right: $spacing-xs;
-  }
-
-  &__item {
-    width: 100%;
-    display: flex;
-    padding: $spacing-xs;
-    border-radius: 12px;
-    border: 1px solid $gray20;
-    margin-bottom: $spacing-xs;
-    transition: 0.3s;
-    &:hover {
-      border: 1px solid $gray70;
-    }
-
-    &-description {
-      width: 60rem;
-      color: $gray60;
-      margin-bottom: $spacing-xxs;
-      font-weight: 100;
-      letter-spacing: 0.02em;
-    }
-    &-publish {
-      display: flex;
-      font-weight: 200;
-      color: $gray80;
-    }
-    &-publisher {
-      margin-right: $spacing-xxs;
-    }
-    &-title {
-      font-size: 22px;
-    }
-    &-authors {
-      font-size: 18px;
-      color: $gray80;
-    }
-    &-btn {
-      margin-left: auto;
-      border-radius: 10px;
-      height: 80px;
-      width: 80px;
-      outline: none;
-      border: none;
-      color: white;
-      font-size: 18px;
-      background-color: $blue-accent;
-      transition: 0.3s;
-      &:hover {
-        background-color: $blue-dark;
-      }
-    }
   }
 }
