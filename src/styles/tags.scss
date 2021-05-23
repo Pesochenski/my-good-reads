@@ -1,0 +1,80 @@
+@import './variables';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+}
+
+h1,
+h2 {
+  font-size: 24px;
+  margin: $spacing-xxs 0;
+  font-weight: 300;
+}
+
+input {
+  font-size: 0.8rem;
+  border: none;
+  border-bottom: 1px solid $gray40;
+  padding: $spacing-xxs;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+a {
+  cursor: pointer;
+  color: $blue-accent;
+  text-decoration-line: none;
+  transition: 0.3s;
+
+  &:hover {
+    color: $blue-dark;
+  }
+
+  h1 {
+    flex: 1;
+  }
+}
+
+main {
+  display: flex;
+  padding: $spacing-xs $spacing-xxs;
+  height: 88vh;
+}
+
+form {
+  margin-bottom: $spacing-xs;
+}
+
+.reading-list-container {
+  h2 {
+    position: relative;
+    color: $white;
+    background-color: $gray80;
+    margin: 0;
+    padding: 0.75rem;
+    text-align: center;
+  }
+
+  button {
+    position: absolute;
+    top: $spacing-xxs;
+    right: $spacing-xxs;
+    padding: 0;
+    min-width: 36px;
+  }
+}
+
+.header {
+  button {
+    padding: 0 $spacing-xs;
+  }
+}

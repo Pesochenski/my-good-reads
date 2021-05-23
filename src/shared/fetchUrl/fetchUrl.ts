@@ -7,8 +7,9 @@
  * @param config
  */
 const fetchUrl = (url: string, config = {}): Promise<any> =>
-    fetch(url, config).then(async response => {
-        const data = await response.json();
-        return response.ok ? data : Promise.reject(data);
-    });
+  fetch(url, config).then(async response => {
+    const data = await response.json();
+    return response.ok ? data : Promise.reject(data);
+  }).catch((err) => console.log(err));
+
 export default fetchUrl;
